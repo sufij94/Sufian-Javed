@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Sufian Javed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -11,7 +12,7 @@
   <div class="container">
     <div class="nav-wrapper">
       <div class="left-side">
-        <div class="nav-link-wrapper">
+        <div class="nav-link-wrapper active-nav-link">
           <a href="index.html">Home</a>
         </div>
         <div class="nav-link-wrapper">
@@ -38,40 +39,39 @@
               Placeholder Text
             </div>
           </div>
-
-          <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/javascript.jpg)"></div>
-            <div class="img-text-wrapper">
-              <div class="logo-wrapper">
-                <img src="images/logos/dev.png" alt="dev logo">
-              </div>
-              <div class="subtitle">
-                Placeholder Text
-              </div>
+        </div>
+        <div class="portfolio-item-wrapper">
+          <div class="portfolio-img-background" style="background-image:url(images/javascript.jpg)"></div>
+          <div class="img-text-wrapper">
+            <div class="logo-wrapper">
+              <img src="images/logos/dev.png" alt="dev logo">
+            </div>
+            <div class="subtitle">
+              Placeholder Text
             </div>
           </div>
+        </div>
 
-          <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/travel.jpg)"></div>
-            <div class="img-text-wrapper">
-              <div class="logo-wrapper">
-                <img src="images/logos/cloud.png" alt="cloud logo">
-              </div>
-              <div class="subtitle">
-                Placeholder Text
-              </div>
+        <div class="portfolio-item-wrapper">
+          <div class="portfolio-img-background" style="background-image:url(images/travel.jpg)"></div>
+          <div class="img-text-wrapper">
+            <div class="logo-wrapper">
+              <img src="images/logos/cloud.png" alt="cloud logo">
+            </div>
+            <div class="subtitle">
+              Placeholder Text
             </div>
           </div>
+        </div>
 
-          <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/vpn.jpg)"></div>
-            <div class="img-text-wrapper">
-              <div class="logo-wrapper">
-                <img src="images/logos/elearning.png" alt="learning logo">
-              </div>
-              <div class="subtitle">
-                Placeholder Text
-              </div>
+        <div class="portfolio-item-wrapper">
+          <div class="portfolio-img-background" style="background-image:url(images/vpn.jpg)"></div>
+          <div class="img-text-wrapper">
+            <div class="logo-wrapper">
+              <img src="images/logos/elearning.png" alt="learning logo">
+            </div>
+            <div class="subtitle">
+              Placeholder Text
             </div>
           </div>
         </div>
@@ -79,5 +79,20 @@
     </div>
   </div>
 </body>
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      portfolioItem.childNodes[1].classList.add('img-darken');
+    })
+  })
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseout', () => {
+      portfolioItem.childNodes[1].classList.remove('img-darken');
+    })
+  })
+</script>
 
 </html>
